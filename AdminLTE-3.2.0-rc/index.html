@@ -26,9 +26,14 @@
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
  <style>
-    aside{
+   @font-face {
+     font-family: "calibri";
+     src: url(fonts/calibri-font-sv/calibri\ font\ sv/);
+   }
+    .d_purple{
       background-color: #442460 !important ;
     }
+ 
     .d_pinkcolor{
       background-color: #FDFAFD;
     }
@@ -44,6 +49,41 @@
     .d_tbdr{
       border: 1px dashed #000;
     }
+    .slide{
+      height: 42px;
+    }
+    .slide a{
+      line-height: 42px;
+      padding:5px 30px ;
+       padding: 0px 10px 20px 10px !important;
+     }
+    ::placeholder {
+      color: #000 !important ;
+     }
+     .d_border-bottom:focus ~ .d_xyz{
+        top: -10px !important;
+        font-size: 0.7em;
+     }
+     .d_border-bottom{
+       border-bottom: 2px solid #000 !important;
+     }
+     .d_xyz{
+       position: absolute;
+       top: 0px;
+       transition: all 0.1s linear ;
+       font-size: 1em;
+     }
+     .active{
+       padding: 10px 10px;
+       border-bottom: 4px solid #ffb900;
+     }
+     
+    @media only screen and (max-width: 990px) {
+     .d_tabpannel{
+       width: 1200px !important;
+      overflow: hidden !important;
+     }
+   }
     @media only screen and (max-width: 600px) {
       .d_pink{
       height: 80px;
@@ -59,6 +99,48 @@
  </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
+
+<!-- Modal -->
+<div class="modal " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg pt-5">
+    <div class="modal-content">
+      <div class="modal-header border-bottom-0">
+        <h5 class="modal-title" id="exampleModalLabel">Let's create a project for you!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>We need a little information to create your first project. This should take just a couple of minutes.</p>
+        <form>
+          <div class="row">
+            <div class="col-6">
+              <div class="mb-3">
+                <input  type="email" class="form-control border-0 rounded-0 d_border-bottom " id="exampleInputEmail1" aria-describedby="emailHelp">
+                <span  class=" d_xyz ">Enter Project Name</span>
+
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <input placeholder="Enter Research Market" type="email" class="form-control border-0 rounded-0 d_border-bottom" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+            </div>
+          </div>
+       
+          
+        
+        </form>
+      </div>
+      <div class="modal-footer border-top-0">
+        <button type="button" class="btn  btn-outline-secondary" data-dismiss="modal">Reset</button>
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="wrapper">
 
   <!-- Preloader -->
@@ -70,7 +152,7 @@
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
-      <li class="nav-item">
+      <li class="nav-item"> 
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
@@ -202,7 +284,7 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="d_purple main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link bg-white">
       <img src="dist/img/Group 496.svg" alt="IDSTATS Logo" class="brand-image " style="opacity: .8">
@@ -500,14 +582,101 @@
         <div class="d_pink_box h-100 ">
          
         </div><!-- /.row -->
+      
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
 
     <!-- Main content -->
     <section class="content">
-      <div class="container-fluid
-         
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-6 ">
+            <h3 class="fw-bold">User Experience Mapping - Project ABC </h3>
+          </div>
+          <div class="col-6 ">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="d_tabpannel">
+              <ul class="nav nav-tabs slide bg-white">
+                <li ><a data-toggle="tab" href="#project">Projects</a></li>
+                <li ><a class="active" data-toggle="tab" href="#project_detail">Projects Detail</a></li>
+                <li><a data-toggle="tab" href="#setups">Setups</a></li>
+                <li><a data-toggle="tab" href="#share">Share</a></li>
+                <li><a data-toggle="tab" href="#fieldwork_status">Fieldwork Status</a></li>
+                <li><a data-toggle="tab" href="#process">Process</a></li>
+                <li><a data-toggle="tab" href="#report ">Report</a></li>
+              </ul>
+              
+              <div class="tab-content">
+                <div id="project" class="tab-pane fade in active">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div id="project_detail" class="tab-pane fade">
+                  <h3>Menu 1</h3>
+                  <p>Some content in menu 1.</p>
+                </div>
+                <div id="setups" class="tab-pane fade">
+                  <h3>Menu 2</h3>
+                  <p>Some content in menu 2.</p>
+                </div>
+                <div id="share" class="tab-pane fade">
+                  <h3>Menu 2</h3>
+                  <p>Some content in menu 2.</p>
+                </div>
+                <div id="fieldwork_status" class="tab-pane fade">
+                  <h3>Menu 2</h3>
+                  <p>Some content in menu 2.</p>
+                </div>
+                <div id="process" class="tab-pane fade">
+                  <h3>Menu 2</h3>
+                  <p>Some content in menu 2.</p>
+                </div>
+                <div id="report" class="tab-pane fade">
+                  <h3>Menu 2</h3>
+                  <p>Some content in menu 2.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+            </div>
+            
+
+        <div >
+          <button class="btn float-right mt-1 d_purple text-white" data-toggle="modal" data-target="#exampleModal">Create New Project</button>
+        </div>
+
+        
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
@@ -522,7 +691,7 @@
   </footer>
 
   <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
+  <aside class="d_purple control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->
